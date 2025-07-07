@@ -54,6 +54,7 @@ def demo_basic_ik():
 
     # print(kin_state)
     for _ in range(10):
+        import pdb; pdb.set_trace()
         q_sample = ik_solver.sample_configs(100)
         kin_state = ik_solver.fk(q_sample)
         goal = Pose(kin_state.ee_position, kin_state.ee_quaternion)

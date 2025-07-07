@@ -93,6 +93,7 @@ def save_usd():
 
     robot_path = get_path_of_dir(full_path)
     filename = get_filename(full_path)
+    # import pdb; pdb.set_trace()
     imported_robot = urdf_interface.parse_urdf(robot_path, filename, import_config)
     robot_path = urdf_interface.import_robot(
         robot_path, filename, imported_robot, import_config, ""
@@ -106,6 +107,7 @@ def save_usd():
     usd_help = UsdHelper()
     usd_help.load_stage(my_world.stage)
     save_path = join_path(get_assets_path(), robot_config["robot_cfg"]["kinematics"]["usd_path"])
+    # import pdb; pdb.set_trace()
     usd_help.write_stage_to_file(save_path, True)
     print("Wrote usd file to " + save_path)
     simulation_app.close()
